@@ -1,12 +1,13 @@
 import { useState } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import ButtonComponent from "./components/ButtonComponent";
 
 // import { useRouter } from 'next/navigation';
 // import Cookies from 'js-cookie';
 // import { login } from '@/app/services/login';
 
 export const LoginForm = ({ title }) => {
-  console.log("🚀 ~ file: LoginForm.jsx:7 ~ LoginForm ~ title:", title)
+  console.log("🚀 ~ file: LoginForm.jsx:7 ~ LoginForm ~ title:", title);
   // const router = useRouter();
 
   const onSubmit = () => {
@@ -81,41 +82,13 @@ export const LoginForm = ({ title }) => {
           onChange={handlePasswordChange}
         />
       </div>
-      {/* Submit button */}
-      {/* <button type="submit">ok</button>
-            <a
-                href="#!"
-                className="text-center text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 light:text-primary-400 light:hover:text-primary-500 light:focus:text-primary-500 light:active:text-primary-600"
-            >
-                Forgot password?
-            </a> */}
-      <button
-        className={[
-          "bg-[#1266f1] storybook-button",
-          `storybook-button--`,
-          `inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm 
-            font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] 
-            transition duration-150 ease-in-out hover:bg-[#1266f1]  
-            hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
-            focus:bg-[#1266f1] focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
-            focus:outline-none focus:ring-0 active:bg-primary-700 
-            active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] 
-            light:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] 
-            light:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] 
-            light:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)`,
-        ]}
-        // backgroundColor="#1266f1"
-        label="Ingresar"
-        onClick={onSubmit}
-      >
-        {"dewdefinition"}
-      </button>
+      <ButtonComponent text="Ingresar" functionComponent={onSubmit} />
     </form>
   );
 };
-/**   
+/**
  * PropTypes
-*/
+ */
 LoginForm.propTypes = {
-  title: PropTypes.string
-}
+  title: PropTypes.string,
+};

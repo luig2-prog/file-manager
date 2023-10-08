@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import ButtonComponent from "./components/ButtonComponent";
+import { RiRadioButtonLine } from 'react-icons/ri'
 
 // import { useRouter } from 'next/navigation';
 // import Cookies from 'js-cookie';
@@ -10,10 +11,10 @@ export const LoginForm = ({ title }) => {
   console.log("🚀 ~ file: LoginForm.jsx:7 ~ LoginForm ~ title:", title);
   // const router = useRouter();
 
-  const onSubmit = () => {
-    // const cookieName = 'myTokenName'
-    // Cookies.set(cookieName, 'prueba')
-    // router.push('/dashboard')
+  const onSubmit = async () => {
+    const fetchData = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const jsonData = await fetchData.json();
+    console.log("🚀 ~ file: LoginForm.jsx:16 ~ onSubmit ~ jsonData:", jsonData)
   };
 
   const [usernameLogin, setUsernameLogin] = useState("");
@@ -82,7 +83,9 @@ export const LoginForm = ({ title }) => {
           onChange={handlePasswordChange}
         />
       </div>
-      <ButtonComponent text="Ingresar" functionComponent={onSubmit} />
+      <ButtonComponent text="Ingresar" functionComponent={onSubmit} >
+        <RiRadioButtonLine />
+      </ButtonComponent>
     </form>
   );
 };

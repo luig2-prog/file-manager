@@ -1,11 +1,6 @@
 import PropTypes from "prop-types";
 
-ButtonComponent.propTypes = {
-    functionComponent: PropTypes.func,
-  text: PropTypes.string,
-};
-
-const ButtonComponent = ({ text, functionComponent }) => {
+const ButtonComponent = ({ children, text, functionComponent }) => {
   return (
     <button
       className={[
@@ -25,9 +20,16 @@ const ButtonComponent = ({ text, functionComponent }) => {
       label="Ingresar"
       onClick={functionComponent}
     >
+      {children}
       {text}
     </button>
   );
+};
+
+ButtonComponent.propTypes = {
+  functionComponent: PropTypes.func,
+  text: PropTypes.string,
+  children: PropTypes.any,
 };
 
 export default ButtonComponent;

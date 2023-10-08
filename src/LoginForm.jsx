@@ -1,9 +1,12 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
+
 // import { useRouter } from 'next/navigation';
 // import Cookies from 'js-cookie';
 // import { login } from '@/app/services/login';
 
-export const LoginForm = () => {
+export const LoginForm = ({ title }) => {
+  console.log("🚀 ~ file: LoginForm.jsx:7 ~ LoginForm ~ title:", title)
   // const router = useRouter();
 
   const onSubmit = () => {
@@ -110,3 +113,9 @@ export const LoginForm = () => {
     </form>
   );
 };
+/**   
+ * PropTypes
+*/
+LoginForm.propTypes = {
+  title: PropTypes.string
+}

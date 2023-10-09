@@ -4,7 +4,7 @@ const ButtonComponent = ({ children, text, functionComponent }) => {
   return (
     <button
       className={[
-        "bg-[#1266f1] storybook-button",
+        "bg-[#1266f1] m-1 storybook-button",
         `storybook-button--`,
         `inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm 
                 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] 

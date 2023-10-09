@@ -14,7 +14,7 @@ const InputChange = () => {
                     motion-reduce:transition-none light:text-neutral-200 
                     light:placeholder:text-neutral-200 
                     [&:not([data-te-input-placeholder-active])]:placeholder:opacity-100"
-        id="exampleFormControlInput33"
+        id="exampleFormControlInput333"
         onChange={(e) => setMessage(e.target.value)}
       />
     </>

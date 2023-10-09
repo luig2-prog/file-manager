@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import ButtonComponent from "./components/ButtonComponent";
-import { RiRadioButtonLine } from 'react-icons/ri'
+import { RiRadioButtonLine } from "react-icons/ri";
 
 // import { useRouter } from 'next/navigation';
 // import Cookies from 'js-cookie';
@@ -12,10 +12,10 @@ export const LoginForm = ({ title }) => {
   // const router = useRouter();
   let posts;
   const onSubmit = async () => {
-    const fetchData = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const fetchData = await fetch("https://jsonplaceholder.typicode.com/posts");
     const jsonData = await fetchData.json();
     posts = jsonData;
-    console.log("🚀 ~ file: LoginForm.jsx:16 ~ onSubmit ~ jsonData:", jsonData)
+    console.log("🚀 ~ file: LoginForm.jsx:16 ~ onSubmit ~ jsonData:", jsonData);
   };
 
   const [usernameLogin, setUsernameLogin] = useState("");
@@ -84,12 +84,12 @@ export const LoginForm = ({ title }) => {
           onChange={handlePasswordChange}
         />
       </div>
-      <ButtonComponent text="Ingresar" functionComponent={onSubmit} >
+      <ButtonComponent text="Ingresar" functionComponent={onSubmit}>
         <RiRadioButtonLine />
       </ButtonComponent>
-      {posts?.map(post => {
-        console.log("🚀 ~ file: LoginForm.jsx:93 ~ LoginForm ~ post:", post)
-        return '<div></div>'
+      {posts?.map((post) => {
+        console.log("🚀 ~ file: LoginForm.jsx:93 ~ LoginForm ~ post:", post);
+        return "<div></div>";
       })}
     </form>
   );

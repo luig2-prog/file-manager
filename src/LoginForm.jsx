@@ -10,10 +10,11 @@ import { RiRadioButtonLine } from 'react-icons/ri'
 export const LoginForm = ({ title }) => {
   console.log("🚀 ~ file: LoginForm.jsx:7 ~ LoginForm ~ title:", title);
   // const router = useRouter();
-
+  let posts;
   const onSubmit = async () => {
     const fetchData = await fetch('https://jsonplaceholder.typicode.com/posts');
     const jsonData = await fetchData.json();
+    posts = jsonData;
     console.log("🚀 ~ file: LoginForm.jsx:16 ~ onSubmit ~ jsonData:", jsonData)
   };
 
@@ -86,6 +87,10 @@ export const LoginForm = ({ title }) => {
       <ButtonComponent text="Ingresar" functionComponent={onSubmit} >
         <RiRadioButtonLine />
       </ButtonComponent>
+      {posts?.map(post => {
+        console.log("🚀 ~ file: LoginForm.jsx:93 ~ LoginForm ~ post:", post)
+        return '<div></div>'
+      })}
     </form>
   );
 };
